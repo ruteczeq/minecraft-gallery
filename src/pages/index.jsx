@@ -5,20 +5,20 @@ export default function HomePage() {
   return (
     <div className={styles.fullscreen}>
       <div className={styles.wrapper}>
-        <h1 className={styles.title}>Co chcesz dzisiaj wylosowac?</h1>
+        <h1 className={styles.title}>What would you like to draw today?</h1>
         <div className={styles.buttonRow}>
           <Link href="/items" className={styles.choiceButton}>
-            <span>Itemy</span>
+            <span>Items</span>
           </Link>
           <Link href="/blocks" className={styles.choiceButton}>
-            <span>Bloki</span>
+            <span>Blocks</span>
           </Link>
           <Link href="/crafting" className={styles.choiceButton}>
-            <span>Craftingi</span>
+            <span>Craftings</span>
           </Link>
         </div>
         <p className={styles.subtitle}>
-          Wybierz kategorie i sprawdz, co tym razem wypadnie z losowania!
+          Pick a category and find out what you get this time!
         </p>
       </div>
     </div>

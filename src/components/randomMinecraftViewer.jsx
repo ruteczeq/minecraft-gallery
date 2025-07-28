@@ -11,13 +11,13 @@ export default function RandomMinecraftViewer({ endpoint, title }) {
     setError(null);
     try {
       const res = await fetch(endpoint);
-      if (!res.ok) throw new Error("Błąd HTTP: " + res.status);
+      if (!res.ok) throw new Error("HTTP error: " + res.status);
       const list = await res.json();
       const random = list[Math.floor(Math.random() * list.length)];
       setData(random);
     } catch (err) {
-      console.error("Błąd pobierania:", err);
-      setError("Nie udało się pobrać danych.");
+      console.error("Fetch error:", err);
+      setError("Failed to fetch data.");
       setData(null);
     } finally {
       setLoading(false);
@@ -28,7 +28,7 @@ export default function RandomMinecraftViewer({ endpoint, title }) {
     fetchRandomData();
   }, [endpoint]);
 
-  if (loading) return <p>Ładowanie...</p>;
+  if (loading) return <p>Loading...</p>;
 
   if (error) {
     return (
@@ -36,22 +36,22 @@ export default function RandomMinecraftViewer({ endpoint, title }) {
         <h1 className={styles.title}>{title}</h1>
         <p className={styles.message}>{error}</p>
         <button className={styles.button} onClick={fetchRandomData}>
-          Spróbuj ponownie
+          Try again
         </button>
       </div>
     );
   }
 
-  if (!data) return <p>Nie udało się pobrać danych.</p>;
+  if (!data) return <p>Failed to fetch data.</p>;
 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>{title}</h1>
       <img src={data.image} alt={data.name} className={styles.image} />
       <h2 className={styles.subtitle}>{data.name}</h2>
-      <p className={styles.description}>{data.description || "Brak opisu."}</p>
+      <p className={styles.description}>{data.description || "No data."}</p>
       <button className={styles.button} onClick={fetchRandomData}>
-        Losuj inny
+        Pick another
       </button>
     </div>
   );

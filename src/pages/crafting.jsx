@@ -24,8 +24,8 @@ export default function CraftingPage() {
         setBlocksList(blocksData);
         fetchRecipe(itemsData, blocksData);
       } catch (err) {
-        console.error("Błąd ładowania danych:", err);
-        setError("Nie udało się załadować listy bloków lub przedmiotów.");
+        console.error("Error loading data:", err);
+        setError("Failed to load blocks or items list.");
         setLoading(false);
       }
     };
@@ -42,8 +42,8 @@ export default function CraftingPage() {
       const random = data[Math.floor(Math.random() * data.length)];
       setRecipe(random);
     } catch (err) {
-      console.error("Błąd pobierania craftingu:", err);
-      setError("Nie udało się pobrać craftingu.");
+      console.error("Error fetching crafting:", err);
+      setError("Failed to fetch crafting.");
       setRecipe(null);
     } finally {
       setLoading(false);
@@ -79,30 +79,30 @@ export default function CraftingPage() {
   };
 
 
-  if (loading) return <p className={styles.message}>Ładowanie...</p>;
+  if (loading) return <p className={styles.message}>Loading...</p>;
 
   if (error) {
     return (
       <div className={styles.container}>
-        <h1 className={styles.title}>Wystąpił błąd</h1>
+        <h1 className={styles.title}>An error occurred</h1>
         <p className={styles.message}>{error}</p>
         <button
           className={styles.button}
           onClick={() => fetchRecipe(itemsList, blocksList)}
         >
-          Spróbuj ponownie
+          Try again
         </button>
       </div>
     );
   }
-  
-  if (!recipe) return <p className={styles.message}>Nie udało się pobrać craftingu.</p>;
+
+  if (!recipe) return <p className={styles.message}>Failed to fetch crafting.</p>;
 
   const resultImage = getImageForName(recipe.item);
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Losowy crafting</h1>
+      <h1 className={styles.title}>Random crafting</h1>
 
       <div className={styles.resultRow}>
         <div className={styles.craftingGrid}>
@@ -124,7 +124,7 @@ export default function CraftingPage() {
       </div>
 
       <button className={styles.button} onClick={() => fetchRecipe(itemsList, blocksList)}>
-        Losuj inny
+        Pick another
       </button>
     </div>
   );

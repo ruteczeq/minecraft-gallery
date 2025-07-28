@@ -4,7 +4,7 @@ export default function BlocksPage() {
   return (
     <RandomMinecraftViewer
       endpoint="https://minecraft-api.vercel.app/api/blocks"
-      title="Wylosowany blok"
+      title="Random block"
     />
   );
 }

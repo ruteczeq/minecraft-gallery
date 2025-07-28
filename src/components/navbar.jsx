@@ -9,13 +9,13 @@ export default function Navbar() {
       </div>
       <ul className={styles.menu}>
         <li>
-          <Link href="/items" className={styles.link}>Itemy</Link>
+          <Link href="/items" className={styles.link}>Items</Link>
         </li>
         <li>
-          <Link href="/blocks" className={styles.link}>Bloki</Link>
+          <Link href="/blocks" className={styles.link}>Blocks</Link>
         </li>
         <li>
-          <Link href="/crafting" className={styles.link}>Craftingi</Link>
+          <Link href="/crafting" className={styles.link}>Craftings</Link>
         </li>
       </ul>
     </nav>
