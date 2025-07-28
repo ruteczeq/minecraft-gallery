@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Minecraft', sans-serif;
-  background-image: url('./img/background.png');
+  background-image: url('/minecraft-gallery/img/background.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
