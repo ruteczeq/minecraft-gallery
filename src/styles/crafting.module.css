@@ -1,0 +1,155 @@
+.container {
+  text-align: center;
+  padding: 40px;
+  color: #fff;
+  font-family: 'Minecraft', sans-serif;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 32px;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.message {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #eee;
+  padding: 40px;
+}
+
+.craftingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 96px);
+  grid-gap: 8px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.slot {
+  width: 96px;
+  height: 96px;
+  background-color: #ccc;
+  border: 2px solid #555;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slot img {
+  width: 64px;
+  height: 64px;
+}
+
+.caption {
+  max-width: 90px;          
+  font-size: 0.85rem;
+  color: #222;
+  margin-top: 4px;
+  text-align: center;
+  white-space: nowrap;      
+  overflow: hidden;         
+  text-overflow: ellipsis;  
+}
+
+.empty {
+  opacity: 0.8;
+  border: 2px dashed #777;
+}
+
+.arrow {
+  font-family: 'Minecraft', sans-serif;  
+  font-size: 4rem;                      
+  color: white;
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;                     
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+
+.arrow::before {
+  content: '→';
+}
+
+.button {
+  background-color: #228b22;
+  border: none;
+  padding: 14px 38px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px #1a6b1a;
+  font-family: inherit;
+  font-size: 1.3rem;
+  transition: background-color 0.3s;
+  text-shadow: 2px 2px 2px #000;
+}
+
+.button:hover {
+  background-color: #32cd32;
+}
+
+.resultSlot {
+  width: 150px;
+  height: 150px;
+  background-color: #c0c0c0;
+  border: 2px solid #555;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 2px 2px 4px #aaa;
+  padding: 4px;
+}
+
+.resultSlot .caption {
+  max-width: 140px;      
+  font-size: 1rem;       
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #222;
+  margin-top: 6px;
+  text-align: center;
+}
+
+.resultSlot img {
+  width: 80px;
+  height: 80px;
+}
+
+.resultRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .resultRow {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .arrow::before {
+    content: '↓';
+  }
+
+   .arrow {
+    height: 20px;
+    width: 60%;
+    padding-bottom: 40px;
+  }
+}

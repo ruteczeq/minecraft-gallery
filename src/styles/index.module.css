@@ -1,0 +1,87 @@
+.fullscreen {
+  min-height: 90vh;
+  min-width: 98vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Jeśli chcesz, możesz tu dodać tło dla całej strony */
+}
+
+.wrapper {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6b8e23 60%, #556b2f 100%);
+  border-radius: 18px;
+  box-shadow: 0 0 32px #222;
+  margin: 40px auto;
+  max-width: 600px;
+  padding: 36px 18px;
+}
+
+.title {
+  font-size: 3.2rem;
+  margin-bottom: 36px;
+  color: #fff;
+  text-shadow: 3px 3px 0 #222, 0 0 8px #000;
+  font-family: 'Minecraft', sans-serif;
+  text-align: center;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.choiceButton {
+  background-color: #228b22;
+  border: none;
+  padding: 14px 38px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px #1a6b1a;
+  font-family: inherit;
+  font-size: 1.3rem;
+  transition: background-color 0.3s;
+  text-shadow: 4px 2px 3px #000;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.choiceButton:hover {
+  background-color: #32cd32;
+}
+
+.subtitle {
+  color: #eee;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 0 #222;
+  margin-top: 12px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 8px;
+  padding: 8px 18px;
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    max-width: 98vw;
+    padding: 18px 4vw;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .buttonRow {
+    gap: 1rem;
+  }
+  .choiceButton {
+    font-size: 1rem;
+    padding: 14px 18px;
+  }
+}
