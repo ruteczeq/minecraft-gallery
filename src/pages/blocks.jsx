@@ -1,4 +1,4 @@
-import RandomMinecraftViewer from "../components/RandomMinecraftViewer";
+import RandomMinecraftViewer from "../components/randomMinecraftViewer";
 
 export default function BlocksPage() {
   return (
